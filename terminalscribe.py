@@ -1,3 +1,8 @@
+# Jan 2023
+# RL 
+# Essential Python Exercises
+
+
 import os
 import time
 from termcolor import colored
