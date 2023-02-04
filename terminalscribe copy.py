@@ -1,12 +1,7 @@
-# Jan 2023
-# RL 
-# Essential Python Exercises
-
-
 import os
 import time
-from termcolor import colored, cprint
 import math
+from termcolor import colored, cprint
 
 class Canvas:
     def __init__(self, width, height):
@@ -63,35 +58,17 @@ class TerminalScribe:
         self.canvas.print()
         time.sleep(self.framerate)
 
+    def drawCircle(self, center, radius):
+        for theta in range(0, 360, 5):
+            x = center[0] + radius * math.cos(math.radians(theta))
+            y = center[1] + radius * math.sin(math.radians(theta))
+            pos = [int(x), int(y)]
+            self.draw(pos)
+
 canvas = Canvas(14, 9) # 14 columns #9 rows
 scribe = TerminalScribe(canvas)
 
-
-scribe.right()
-scribe.right()
-scribe.right()
-scribe.right()
-scribe.right()
-scribe.right()
-scribe.right()
-scribe.right()
-scribe.right()
-scribe.down()
-scribe.down()
-scribe.down()
-scribe.down()
-scribe.left()
-scribe.left()
-scribe.left()
-scribe.left()
-scribe.left()
-scribe.left()
-scribe.left()
-scribe.left()
-scribe.left()
-scribe.up()
-scribe.up()
-scribe.up()
-scribe.up()
-
-
+# Draw a circle with a center of [6, 4] and a radius of 3
+scribe.drawCircle([6,4])
+radius = 4
+scribe.draw_circle(center, radius)
